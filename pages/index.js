@@ -1,6 +1,58 @@
 import Head from 'next/head';
 
 export default function Home() {
+  var pathArray = [
+    'https://raw.githubusercontent.com/VatsaDev/skald-react/main/public/dragonFight.jpg',
+    'https://raw.githubusercontent.com/VatsaDev/skald-react/main/public/dwarfMine.jpg',
+    'https://raw.githubusercontent.com/VatsaDev/skald-react/main/public/fantasyCastle.jpg',
+    'https://raw.githubusercontent.com/VatsaDev/skald-react/main/public/frozenWaste.jpg',
+    'https://raw.githubusercontent.com/VatsaDev/skald-react/main/public/jungleTemple.jpg',
+    'https://raw.githubusercontent.com/VatsaDev/skald-react/main/public/magicSwamp.jpg',
+    'https://raw.githubusercontent.com/VatsaDev/skald-react/main/public/rusticVillage.jpg',
+    'https://raw.githubusercontent.com/VatsaDev/skald-react/main/public/yaeger.jpg',
+    'https://raw.githubusercontent.com/VatsaDev/skald-react/main/public/planeFlight.jpg',
+    'https://raw.githubusercontent.com/VatsaDev/skald-react/main/public/spaceStation.jpg',
+    'https://raw.githubusercontent.com/VatsaDev/skald-react/main/public/underwaterPalace.jpg',
+    'https://raw.githubusercontent.com/VatsaDev/skald-react/main/public/underworld.jpg',
+  ];
+  var path = pathArray[Math.floor(Math.random() * pathArray.length)];
+  var quote = '';
+  if (path == pathArray[0]) {
+    quote = 'Have a viking army fight a dragon';
+  }
+  if (path == pathArray[1]) {
+    quote = 'Visit the Dwarven mines to the north';
+  }
+  if (path == pathArray[2]) {
+    quote = 'Visit the home of the Royals';
+  }
+  if (path == pathArray[3]) {
+    quote = 'Trudge Through frozen wastelands';
+  }
+  if (path == pathArray[4]) {
+    quote = 'Loot the jungle temple';
+  }
+  if (path == pathArray[5]) {
+    quote = 'Tread the dangers of the swamp';
+  }
+  if (path == pathArray[6]) {
+    quote = 'Get some Bread and Ale at the Village tavern';
+  }
+  if (path == pathArray[7]) {
+    quote = 'Climb Cliffs with a Yaeger';
+  }
+  if (path == pathArray[8]) {
+    quote = 'Fly a plane through the clouds';
+  }
+  if (path == pathArray[9]) {
+    quote = 'Mine Unobtanium on an Exoplanet far far away';
+  }
+  if (path == pathArray[10]) {
+    quote = 'Travel deep to the kingdom of the merpeople';
+  }
+  if (path == pathArray[11]) {
+    quote = 'Survive the fires of the underworld';
+  }
   return (
     <div>
       <Head>
@@ -12,7 +64,7 @@ export default function Home() {
         className="w-full p-8 bg-cover bg-center text-white"
         style={{
           fontWeight: 'bold',
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6)), url(./banners/dragonFight.png)`,
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6)), url(${path})`,
         }}
       >
         <image
@@ -25,7 +77,7 @@ export default function Home() {
         <h1 className="font-sans font-bold text-8xl text-center my-2 text-shadow-2xl">
           Skald
         </h1>
-        <h2 className="text-center text-4xl my-8 typewriter">must add quote</h2>
+        <h2 className="text-center text-4xl my-8 typewriter">{quote}</h2>
         <h2 className="text-center text-lg my-8">
           Unique, Evocative Stories with the power of{' '}
           <span className="text-amber-500 font-bold">Generative AI</span>, at
@@ -46,12 +98,12 @@ export default function Home() {
           </p>
         </div>
         <img
-          src="https://raw.githubusercontent.com/VatsaDev/skald/main/static/banners/dragonFight.jpg"
+          src="https://raw.githubusercontent.com/VatsaDev/skald-react/main/public/dragonFight.jpg"
           alt="palm"
           className="w-3/4 mx-auto drop-shadow-2xl my-8"
         />
         <img
-          src="https://raw.githubusercontent.com/VatsaDev/skald/main/static/banners/fantasyCastle.jpg"
+          src="https://raw.githubusercontent.com/VatsaDev/skald-react/main/public/dragonFight.jpg"
           alt="palm"
           className="w-3/4 mx-auto drop-shadow-2xl my-8"
         />
@@ -70,12 +122,12 @@ export default function Home() {
           </h2>
         </div>
         <img
-          src="https://raw.githubusercontent.com/VatsaDev/skald/main/static/banners/fantasyCastle.jpg"
+          src="https://raw.githubusercontent.com/VatsaDev/skald-react/main/public/dragonFight.jpg"
           alt="palm"
           className="w-3/4 mx-auto drop-shadow-2xl my-8"
         />
         <img
-          src="https://raw.githubusercontent.com/VatsaDev/skald/main/static/banners/fantasyCastle.jpg"
+          src="https://raw.githubusercontent.com/VatsaDev/skald-react/main/public/dragonFight.jpg"
           alt="palm"
           className="w-3/4 mx-auto drop-shadow-2xl my-8"
         />
