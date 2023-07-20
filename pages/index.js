@@ -63,7 +63,6 @@ export default function Home() {
       <div
         className="w-full p-8 bg-cover bg-center text-white"
         style={{
-          fontWeight: 'bold',
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6)), url(${path})`,
         }}
       >
