@@ -1,15 +1,10 @@
-import Image from 'next/image'
+import Image from 'next/image';
 
 export default function Navbar() {
   return (
     <nav className="flex items-center justify-between flex-wrap bg-slate-900 p-6">
       <div className="flex items-center flex-shrink-0 text-slate-100 mr-6">
-        <Image
-          src="https://raw.githubusercontent.com/VatsaDev/skald/main/static/banners/dragonFight.jpg"
-          width={500}
-          height={500}
-          alt="Picture of the author"
-        />
+        <Image src="/logo-white.png" width={100} height={100} alt="logo" />
         <span className="font-semibold text-4xl mx-4 tracking-tight">
           Skald
         </span>
