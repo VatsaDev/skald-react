@@ -33,3 +33,7 @@
     border-color: transparent;
   }
 }
+
+h1 {
+  font-weight: bold;
+}

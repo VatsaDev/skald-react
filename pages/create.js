@@ -27,7 +27,9 @@ export default function Home() {
       'https://generativelanguage.googleapis.com/v1beta2/models/text-bison-001:generateText?key=AIzaSyDucoz8cp-KDI5_LWXBzbepSc6MN1Ly-Iw';
 
     var textBody =
-      '{ "prompt": { "text": "As a prolific author:' + data + '"} }';
+      '{ "prompt": { "text": "As a prolific author:' +
+      data +
+      ', in the markdown format, with markdown bolding on titles, like **this**"} }';
 
     document.getElementById('naraBtn').disabled = true;
 
