@@ -137,7 +137,7 @@ export default function Home() {
             fantasy adventure story about Leif the viking going to the the
             magical waterfall of Odin, with its rushing rapids, deep blue water,
             and its deafening roars, to get the obsidian idol of Odin, in the
-            style of Brandon Mull.{' '}
+            style of Brandon Mull.{' '} 
             <span className="text-amber-500 ">
               magic, dragons, treasure, myths
             </span>
