@@ -35,6 +35,12 @@ export default function Navbar() {
           >
             Prompt Generator
           </a>
+          <a
+            href="/faqt"
+            className="block mt-4 lg:inline-block lg:mt-0 text-slate-100 hover:text-white hover:underline mx-2"
+          >
+            FAQ
+          </a>
         </div>
         <div>
           <a
