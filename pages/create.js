@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { useState } from 'react';
 // add js code
 
 /*
@@ -21,13 +22,16 @@ import Head from 'next/head';
         return result;
     }*/ // replace with bert adjective replace
 export default function Home() {
-  var text = 'write a story about a viking who found a dragons treasure...';
+  const [postContent, setPostContent] = useState(
+    'write a story about a viking who found a dragons treasure...'
+  );
 
   async function gquery(data) {
     const url =
       'https://generativelanguage.googleapis.com/v1beta2/models/text-bison-001:generateText?key=AIzaSyDucoz8cp-KDI5_LWXBzbepSc6MN1Ly-Iw';
 
-    var textBody = '{ "prompt": { "text": "' + data + '"} }';
+    var textBody =
+      '{ "prompt": { "text": "As a prolific author:' + data + '"} }';
 
     document.getElementById('naraBtn').disabled = true;
 
@@ -41,14 +45,14 @@ export default function Home() {
 
     const gtext = await response.json();
     console.log(gtext.candidates[0].output);
-    text = gtext.candidates[0].output;
+    document.getElementById('editor').value = gtext.candidates[0].output;
     document.getElementById('naraBtn').disabled = false;
   }
 
   var btnText = 'narrate';
 
   function narrate() {
-    gquery(text);
+    gquery(postContent);
   }
 
   return (
@@ -64,10 +68,10 @@ export default function Home() {
           className="bg-slate-100 block w-4/5 h-96 mx-auto drop-shadow-2xl rounded-lg p-8"
           type="text"
           placeholder="hello"
-        >
-          {text}
-        </textarea>
-        <div id="btn-wrapper" class="w-4/5 mx-auto">
+          value={postContent}
+          onChange={(e) => setPostContent(e.target.value)}
+        />
+        <div id="btn-wrapper" className="w-4/5 mx-auto">
           <button
             id="naraBtn"
             className="enabled:bg-amber-500 enabled:text-white w-48 h-10 rounded-full m-8 float-right disabled:bg-slate-600 disabled:text-slate-100"
