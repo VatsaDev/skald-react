@@ -1,10 +1,5 @@
 import Head from 'next/head';
 import { useState } from 'react';
-// add js code
-
-/*
-
-*/
 
 /*async function query(data) {
         const response = await fetch(
@@ -44,7 +39,7 @@ export default function Home() {
     });
 
     const gtext = await response.json();
-    console.log(gtext.candidates[0].output);
+    //console.log(gtext.candidates[0].output);
     document.getElementById('editor').value = gtext.candidates[0].output;
     document.getElementById('naraBtn').disabled = false;
   }
