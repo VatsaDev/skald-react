@@ -5,6 +5,7 @@ export default function Home() {
     <div>
       <Head>
         <title>Pricing</title>
+        <link rel="icon" href="/logo.png" sizes="any" />
       </Head>
 
       <section>
@@ -17,7 +18,7 @@ export default function Home() {
               For people who want a couple stories a month
             </p>
             <ul class="list-disc list-inside m-8">
-              <li>100 tokens/month</li>
+              <li>100 Runes/month</li>
             </ul>
           </div>
           <div class="w-full lg:w-1/3 bg-slate-900 m-2 p-2 rounded-lg">
@@ -29,7 +30,7 @@ export default function Home() {
               bedtime story every night
             </p>
             <ul class="list-disc list-inside m-8">
-              <li>1000 tokens/month</li>
+              <li>1000 Runes/month</li>
             </ul>
           </div>
           <div class="w-full lg:w-1/3 bg-slate-900 m-2 p-2 rounded-lg">
@@ -38,7 +39,7 @@ export default function Home() {
             <h1 class="text-center text-2xl m-8">19.99/month</h1>
             <p class="text-center m-8">For Enterprises</p>
             <ul class="list-disc list-inside m-8">
-              <li>10000 tokens/month</li>
+              <li>10000 Runes/month</li>
             </ul>
           </div>
         </div>

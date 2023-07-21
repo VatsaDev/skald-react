@@ -57,6 +57,7 @@ export default function Home() {
     <div>
       <Head>
         <title>Skald</title>
+        <link rel="icon" href="/logo.png" sizes="any" />
       </Head>
 
       <section />

@@ -5,6 +5,7 @@ export default function Home() {
     <div>
       <Head>
         <title>About</title>
+        <link rel="icon" href="/logo.png" sizes="any" />
       </Head>
 
       <section>
