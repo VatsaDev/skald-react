@@ -70,7 +70,7 @@ export default function Home() {
         <div id="btn-wrapper" className="w-4/5 mx-auto">
           <button
             id="naraBtn"
-            className="enabled:bg-amber-500 enabled:text-white w-48 h-10 rounded-full m-8 float-right disabled:bg-slate-600 disabled:text-slate-100"
+            className="enabled:bg-amber-500 enabled:text-white w-36 h-10 rounded-lg m-8 float-right disabled:bg-slate-600 disabled:text-slate-100"
             onClick={narrate}
           >
             {btnText}
