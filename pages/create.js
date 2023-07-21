@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { useState } from 'react';
+import Markdown from '../components/markdown.js';
 
 /*async function query(data) {
         const response = await fetch(
@@ -59,14 +60,20 @@ export default function Home() {
 
       <section>
         <h1 className="text-center text-8xl m-8 font-bold">Create</h1>
-        <textarea
-          id="editor"
-          className="bg-slate-100 block w-4/5 h-96 mx-auto drop-shadow-2xl rounded-lg p-8"
-          type="text"
-          placeholder="hello"
-          value={postContent}
-          onChange={(e) => setPostContent(e.target.value)}
-        />
+        <div className="grid grid-cols-1 lg:grid-cols-2 w-4/5 mx-auto">
+          <textarea
+            id="editor"
+            className="bg-slate-100 block w-5/6 h-96 mx-auto drop-shadow-2xl rounded-lg p-8 m-2"
+            type="text"
+            placeholder="hello"
+            value={postContent}
+            onChange={(e) => setPostContent(e.target.value)}
+          />
+          <Markdown
+            markdown={postContent}
+            className="bg-slate-100 block w-5/6 h-96 mx-auto drop-shadow-2xl rounded-lg p-8 m-2"
+          />
+        </div>
         <div id="btn-wrapper" className="w-4/5 mx-auto">
           <button
             id="naraBtn"

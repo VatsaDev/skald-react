@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { useState, useEffect } from 'react';
 
 export default function Home() {
   var pathArray = [
@@ -53,19 +54,24 @@ export default function Home() {
   if (path == pathArray[11]) {
     quote = 'Survive the fires of the underworld';
   }
+
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
   return (
     <div>
       <Head>
         <title>Skald</title>
         <link rel="icon" href="/logo.png" sizes="any" />
       </Head>
-
-      <section />
       <div
         className="w-full p-8 bg-cover bg-center text-white"
         style={{
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6)), url(${path})`,
         }}
+        suppressHydrationWarning
       >
         <image
           src="./logo-white.png"
@@ -139,12 +145,11 @@ export default function Home() {
           </h2>
         </div>
       </div>
-      <footer className="my-8 mx-2 invisible lg:visible">
+      <div className="my-8 mx-2 invisible lg:visible">
         <p className="font-mono">
           Copyright Vatsa 2023-present, all rights reserved
         </p>
-      </footer>
-      <section />
+      </div>
     </div>
   );
 }
