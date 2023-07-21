@@ -1,5 +1,10 @@
 import Head from 'next/head';
-import { useState } from 'react';
+import React, { useState } from 'react';
+// Import the Slate editor factory.
+import { createEditor } from 'slate';
+
+// Import the Slate components and React plugin.
+import { Slate, Editable, withReact } from 'slate-react';
 
 /*async function query(data) {
         const response = await fetch(
@@ -52,6 +57,14 @@ export default function Home() {
     gquery(postContent);
   }
 
+  const [editor] = useState(() => withReact(createEditor()));
+  const initialValue = [
+    {
+      type: 'paragraph',
+      children: [{ text: 'A line of text in a paragraph.' }],
+    },
+  ];
+
   return (
     <div>
       <Head>
@@ -62,6 +75,9 @@ export default function Home() {
 
       <section>
         <h1 className="text-center text-8xl m-8 font-bold">Create</h1>
+        <Slate editor={editor} initialValue={initialValue}>
+          <Editable className="w-5/6 mx-auto h-96 bg-slate-100 drop-shadow-2xl rounded-lg p-8 m-2" />
+        </Slate>
         <textarea
           id="editor"
           className="bg-slate-100 block w-5/6 h-96 mx-auto drop-shadow-2xl rounded-lg p-8 m-2"
