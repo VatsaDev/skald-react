@@ -58,10 +58,10 @@ export default function Home() {
       </Head>
 
       <section>
-        <h1 class="text-center text-8xl m-8 font-bold">Create</h1>
+        <h1 className="text-center text-8xl m-8 font-bold">Create</h1>
         <textarea
           id="editor"
-          class="bg-slate-100 block w-4/5 h-96 mx-auto drop-shadow-2xl rounded-lg p-8"
+          className="bg-slate-100 block w-4/5 h-96 mx-auto drop-shadow-2xl rounded-lg p-8"
           type="text"
           placeholder="hello"
         >
@@ -70,7 +70,7 @@ export default function Home() {
         <div id="btn-wrapper" class="w-4/5 mx-auto">
           <button
             id="naraBtn"
-            class="enabled:bg-amber-500 enabled:text-white w-48 h-10 rounded-full m-8 float-right disabled:bg-slate-600 disabled:text-slate-100"
+            className="enabled:bg-amber-500 enabled:text-white w-48 h-10 rounded-full m-8 float-right disabled:bg-slate-600 disabled:text-slate-100"
             onClick={narrate}
           >
             {btnText}
