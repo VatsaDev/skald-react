@@ -18,7 +18,7 @@ import { useState } from 'react';
     }*/ // replace with bert adjective replace
 export default function Home() {
   const [postContent, setPostContent] = useState(
-    'write a story about a viking who found a dragons treasure...'
+    'Write a fantasy adventure story about Leif the viking going to the the magical waterfall of Odin, with its rushing rapids, deep blue water, and its deafening roars, to get the obsidian idol of Odin, in the style of Brandon Mull. magic, dragons, treasure, myths ...'
   );
 
   async function gquery(data) {

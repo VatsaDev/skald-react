@@ -109,11 +109,10 @@ export default function Home() {
           <br />
           <div className="bg-slate-100 rounded-lg text-xl drop-shadow-xl p-8">
             <span className="text-green-500 font-bold">After:</span> Write a{' '}
-            <span className="text-amber-500 ">fantasy adventure</span>{' '}
-            story about Leif the viking going to the the magical waterfall of
-            Odin, with its rushing rapids, deep blue water, and its deafening
-            roars, to get the obsidian idol of Odin, in the style of Brandon
-            Mull
+            <span className="text-amber-500 ">fantasy adventure</span> story
+            about Leif the viking going to the the magical waterfall of Odin,
+            with its rushing rapids, deep blue water, and its deafening roars,
+            to get the obsidian idol of Odin, in the style of Brandon Mull
           </div>
         </p>
         <h2 class="text-center text-3xl font-bold m-8">Adding Keywords</h2>
@@ -222,6 +221,19 @@ export default function Home() {
             at the magical waterfall of Odin.
           </p>
         </div>
+        <p class="text-center text-4xl font-bold m-8">
+          What are you waiting for?{' '}
+          <a href="/create">
+            <span class="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">
+              Get Generating
+            </span>
+            <img
+              src="/gbard.svg"
+              alt="google bard"
+              class=" inline w-12 h-12 m-2 p-2"
+            />
+          </a>
+        </p>
       </section>
     </div>
   );
