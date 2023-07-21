@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import { useState } from 'react';
-import RichEditor from '../components/editor.js';
 
 /*async function query(data) {
         const response = await fetch(
@@ -71,7 +70,6 @@ export default function Home() {
           value={postContent}
           onChange={(e) => setPostContent(e.target.value)}
         />
-        <RichEditor />
         <div id="btn-wrapper" className="w-4/5 mx-auto">
           <button
             id="naraBtn"
