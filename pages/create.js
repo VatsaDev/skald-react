@@ -65,6 +65,7 @@ export default function Home() {
   };
 
   const [REvalue, REsetValue] = useState('');
+  console.log(value);
 
   return (
     <div>
@@ -82,7 +83,7 @@ export default function Home() {
           className="bg-slate-100 block w-5/6 h-96 block w-5/6 mx-auto drop-shadow-2xl rounded-lg p-2 m-8"
           placeholder="Write a fantasy adventure story about Leif the viking going to the the magical waterfall of Odin, with its rushing rapids, deep blue water, and its deafening roars, to get the obsidian idol of Odin, in the style of Brandon Mull. magic, dragons, treasure, myths ..."
           value={REvalue}
-          onChange={(e) => REsetValue(e.target.value, console.log(REvalue))}
+          onChange={REsetValue}
         />
         <textarea
           id="editor"
