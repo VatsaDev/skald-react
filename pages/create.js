@@ -6,6 +6,7 @@ import { createEditor } from 'slate';
 // Import the Slate components and React plugin.
 import { Slate, Editable, withReact } from 'slate-react';
 
+import RichEditor from '../components/RichEditor.tsx';
 /*async function query(data) {
         const response = await fetch(
             "https://api-inference.huggingface.co/models/tiiuae/falcon-7b-instruct",
