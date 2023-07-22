@@ -18,7 +18,9 @@ export default function Home() {
               For people who want a couple stories a month
             </p>
             <ul class="list-disc list-inside m-8">
-              <li>100 Runes/month</li>
+              <li>50 Gold Runes/month</li>
+              <li>40 Amber Runes/month</li>
+              <li>10 Amethyst Runes/month</li>
             </ul>
           </div>
           <div class="w-full lg:w-1/3 bg-slate-900 m-2 p-2 rounded-lg">
@@ -30,7 +32,9 @@ export default function Home() {
               bedtime story every night
             </p>
             <ul class="list-disc list-inside m-8">
-              <li>1000 Runes/month</li>
+              <li>500 Gold Runes/month</li>
+              <li>400 Amber Runes/month</li>
+              <li>100 Amethyst Runes/month</li>
             </ul>
           </div>
           <div class="w-full lg:w-1/3 bg-slate-900 m-2 p-2 rounded-lg">
@@ -39,7 +43,9 @@ export default function Home() {
             <h1 class="text-center text-2xl m-8">19.99/month</h1>
             <p class="text-center m-8">For Enterprises</p>
             <ul class="list-disc list-inside m-8">
-              <li>10000 Runes/month</li>
+              <li>5000 Gold Runes/month</li>
+              <li>4000 Amber Runes/month</li>
+              <li>1000 Amethyst Runes/month</li>
             </ul>
           </div>
         </div>
