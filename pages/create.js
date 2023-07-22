@@ -65,7 +65,7 @@ export default function Home() {
   };
 
   const [REvalue, REsetValue] = useState('');
-  console.log(value);
+  console.log(REvalue);
 
   return (
     <div>
