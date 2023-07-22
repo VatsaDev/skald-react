@@ -112,9 +112,9 @@ export default function Home() {
               </svg>
               Sign in with Google
             </button>
-            <br />
-            <br />
-            <br />
+            <p>
+              Don't have an account yet? <a href="/signup">Sign up</a>
+            </p>
           </div>
         </div>
       </section>
