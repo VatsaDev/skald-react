@@ -74,7 +74,7 @@ export default function Home() {
         suppressHydrationWarning
       >
         <image
-          src="./logo-white.png"
+          src="/logo-white.png"
           alt="logo-black"
           width={100}
           height={100}

@@ -1,6 +1,28 @@
+'use client';
+import React from 'react';
+import signIn from '../firebase/auth/signin';
+import { useRouter } from 'next/navigation';
 import Head from 'next/head';
 
 export default function Home() {
+  const [email, setEmail] = React.useState('');
+  const [password, setPassword] = React.useState('');
+  const router = useRouter();
+
+  const handleForm = async (event) => {
+    event.preventDefault();
+
+    const { result, error } = await signIn(email, password);
+
+    if (error) {
+      return console.log(error);
+    }
+
+    // else successful
+    console.log(result);
+    return router.push('/dashboard');
+  };
+
   return (
     <div>
       <Head>
@@ -9,8 +31,44 @@ export default function Home() {
       </Head>
 
       <section>
-        <div class="w-4/5 h-96 mx-auto my-8 p-6 shadow-xl bg-slate-100 rounded-lg">
-          <h1 class="text-center text-2xl font-bold">Sign in</h1>
+        <div className="w-4/5 mx-auto my-8 p-6 shadow-xl bg-slate-100 rounded-lg">
+          <h1 className="text-center text-2xl font-bold m-8">Sign in</h1>
+          <div className="form-wrapper w-1/4 mx-auto">
+            <form onSubmit={handleForm} className="form">
+              <label htmlFor="email">
+                <p className="text-xl font-bold m-2">Email</p>
+                <input
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="example@mail.com"
+                  className="p-2 rounded-lg"
+                />
+              </label>
+              <label htmlFor="password">
+                <p className="text-xl font-bold m-2">Password</p>
+                <input
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                  type="password"
+                  name="password"
+                  id="password"
+                  placeholder="password"
+                  className="p-2 rounded-lg"
+                />
+              </label>
+              <br />
+              <br />
+              <button
+                type="submit"
+                className="text-black w-1/2 text-center border border-amber-500 hover:bg-amber-500 rounded-lg text-lg p-2 font-bold mx-auto"
+              >
+                Sign in
+              </button>
+            </form>
+          </div>
           <div class="container mx-auto flex flex-wrap items-center justify-between">
             <button
               type="button"
@@ -54,6 +112,9 @@ export default function Home() {
               </svg>
               Sign in with Google
             </button>
+            <br />
+            <br />
+            <br />
           </div>
         </div>
       </section>
