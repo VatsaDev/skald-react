@@ -23,53 +23,10 @@ export default function Home() {
     return router.push('/dashboard');
   };
 
-  return (
-    <div>
-      <Head>
-        <title>Sign in</title>
-        <link rel="icon" href="/logo.png" sizes="any" />
-      </Head>
+  // g btn
 
-      <section>
-        <div className="w-4/5 mx-auto my-8 p-6 shadow-xl bg-slate-100 rounded-lg">
-          <h1 className="text-center text-2xl font-bold m-8">Sign in</h1>
-          <div className="form-wrapper w-1/4 mx-auto">
-            <form onSubmit={handleForm} className="form">
-              <label htmlFor="email">
-                <p className="text-xl font-bold m-2">Email</p>
-                <input
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                  type="email"
-                  name="email"
-                  id="email"
-                  placeholder="example@mail.com"
-                  className="p-2 rounded-lg"
-                />
-              </label>
-              <label htmlFor="password">
-                <p className="text-xl font-bold m-2">Password</p>
-                <input
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
-                  type="password"
-                  name="password"
-                  id="password"
-                  placeholder="password"
-                  className="p-2 rounded-lg"
-                />
-              </label>
-              <br />
-              <br />
-              <button
-                type="submit"
-                className="text-black w-1/2 text-center border border-amber-500 hover:bg-amber-500 rounded-lg text-lg p-2 font-bold mx-auto"
-              >
-                Sign in
-              </button>
-            </form>
-          </div>
-          <div class="container mx-auto flex flex-wrap items-center justify-between">
+  /*
+  <div className="container mx-auto flex flex-wrap items-center justify-between">
             <button
               type="button"
               class="text-black w-1/4 border border-amber-500 hover:bg-amber-500 font-medium rounded-lg text-lg px-5 py-2.5 text-center inline-flex items-center justify-between my-8 mx-auto"
@@ -112,10 +69,62 @@ export default function Home() {
               </svg>
               Sign in with Google
             </button>
-            <p>
-              Don't have an account yet? <a href="/tutsignup">Sign up</a>
-            </p>
+            <br />
           </div>
+  */
+
+  return (
+    <div>
+      <Head>
+        <title>Sign in</title>
+        <link rel="icon" href="/logo.png" sizes="any" />
+      </Head>
+
+      <section>
+        <div className="w-4/5 mx-auto my-8 p-6 shadow-xl bg-slate-100 rounded-lg">
+          <h1 className="text-center text-2xl font-bold m-8">Sign in</h1>
+          <div className="form-wrapper w-1/4 mx-auto">
+            <form onSubmit={handleForm} className="form">
+              <label htmlFor="email">
+                <p className="text-xl font-bold m-2">Email</p>
+                <input
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="example@mail.com"
+                  className="p-2 rounded-lg"
+                />
+              </label>
+              <label htmlFor="password">
+                <p className="text-xl font-bold m-2">Password</p>
+                <input
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                  type="password"
+                  name="password"
+                  id="password"
+                  placeholder="password"
+                  className="p-2 rounded-lg"
+                />
+              </label>
+              <br />
+              <br />
+              <button
+                type="submit"
+                className="text-black w-1/2 text-center border border-amber-500 hover:bg-amber-500 rounded-lg text-lg p-2 mb-4 font-bold mx-auto"
+              >
+                Sign in
+              </button>
+            </form>
+          </div>
+          <p className="text-center">
+            Don't have an account yet?{' '}
+            <a href="/signup" className="underline text-amber-500">
+              Sign up
+            </a>
+          </p>
         </div>
       </section>
     </div>
