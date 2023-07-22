@@ -113,7 +113,7 @@ export default function Home() {
               Sign in with Google
             </button>
             <p>
-              Don't have an account yet? <a href="/signup">Sign up</a>
+              Don't have an account yet? <a href="/tutsignup">Sign up</a>
             </p>
           </div>
         </div>
