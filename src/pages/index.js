@@ -5,7 +5,7 @@ export default function Home() {
   var pathArray = [
     'https://raw.githubusercontent.com/VatsaDev/skald-react/main/public/dragonFight.jpg',
     'https://raw.githubusercontent.com/VatsaDev/skald-react/main/public/dwarfMine.jpg',
-    'https://stackblitz.com/files/story-ai/github/VatsaDev/story-ai/main/static/banners/fantasyCastle.jpg',
+    'https://raw.githubusercontent.com/VatsaDev/skald-react/main/public/dwarfMine.jpg',
     'https://raw.githubusercontent.com/VatsaDev/skald-react/main/public/frozenWaste.jpg',
     'https://raw.githubusercontent.com/VatsaDev/skald-react/main/public/jungleTemple.jpg',
     'https://raw.githubusercontent.com/VatsaDev/skald-react/main/public/magicSwamp.jpg',
@@ -25,7 +25,7 @@ export default function Home() {
     quote = 'Visit the Dwarven mines to the north';
   }
   if (path == pathArray[2]) {
-    quote = 'Visit the home of the Royal Family';
+    quote = 'Visit the Dwarven mines to the north';
   }
   if (path == pathArray[3]) {
     quote = 'Trudge Through frozen wastelands';

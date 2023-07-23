@@ -1,4 +1,5 @@
 import { useAuthContext } from '../context/AuthContext';
+import signOutUser from '../firebase/auth/signout.js';
 
 export default function signOutBtn() {
   const { user } = useAuthContext();
@@ -12,5 +13,9 @@ export default function signOutBtn() {
     classes = 'invisible';
   }
 
-  return <button className={classes}>Sign Out</button>;
+  return (
+    <button className={classes} onClick={signOutUser}>
+      Sign Out
+    </button>
+  );
 }
