@@ -54,7 +54,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Create</title>
+        <title>Demo</title>
         <link rel="icon" href="/logo.png" sizes="any" />
       </Head>
 
@@ -78,6 +78,13 @@ export default function Home() {
           </button>
         </div>
       </section>
+      <div className="float-left m-8 mt-[80px]">
+        Feel like doing more?{' '}
+        <a href="/signup" className="underline">
+          Sign up
+        </a>
+        .{' '}
+      </div>
     </div>
   );
 }

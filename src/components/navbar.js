@@ -1,15 +1,19 @@
 import Image from 'next/image';
-import SignOutBtn from './signinbtn';
+import SignInBtn from './signinbtn';
+import SignOutBtn from './signoutbtn';
 
 export default function Navbar() {
   return (
     <nav className="flex items-center justify-between flex-wrap bg-slate-900 p-6">
-      <div className="flex items-center flex-shrink-0 text-slate-100 mr-6">
+      <a
+        href="/dashboard"
+        className="flex items-center flex-shrink-0 text-slate-100 mr-6"
+      >
         <Image src="/logo-white.png" width={100} height={100} alt="logo" />
         <span className="font-semibold text-4xl mx-4 tracking-tight">
           Skald
         </span>
-      </div>
+      </a>
       <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
         <div className="text-sm lg:flex-grow">
           <a
@@ -44,13 +48,14 @@ export default function Navbar() {
           </a>
         </div>
         <div>
+          <SignOutBtn />
+          <SignInBtn />
           <a
-            href="/create"
-            className="inline-block text-sm px-4 py-2 leading-none border rounded text-amber-500 border-amber-500 hover:border-transparent  hover:bg-amber-500 hover:text-white mt-4 mx-4 lg:mt-0"
+            href="/demo"
+            className="inline-block text-sm px-4 py-2 leading-none border rounded text-amber-500 border-amber-500 hover:border-transparent  hover:bg-amber-500 hover:text-white mt-4 mx-4 -mr-2 lg:mt-0"
           >
             Create
           </a>
-          <SignOutBtn />
         </div>
       </div>
     </nav>
