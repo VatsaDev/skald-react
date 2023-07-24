@@ -14,9 +14,15 @@ export default function Home() {
 
   return (
     <div>
-      <h1 className="text-8xl m-8 text-center font-bold">Your Stories</h1>
-      <div id="storybar">
-        <a href=""></a>
+      <h1 className="text-2xl m-8 text-center font-light">Make a new story</h1>
+      <a
+        href="/dashboard/create"
+        className="border border-8 border-amber-500 p-8 m-8 font-bold text-8xl text-center"
+      >
+        +
+      </a>
+      <div id="storyBar" className="">
+        {stories}
       </div>
     </div>
   );

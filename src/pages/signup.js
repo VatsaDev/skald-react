@@ -11,6 +11,15 @@ export default function Home() {
   const [password, setPassword] = React.useState('');
   const router = useRouter();
 
+  function autoID() {
+    autoID = 'U';
+    for (let i = 0; i < 20; i++) {
+      var x = Math.floor(Math.random() * 10);
+      autoID = autoID + x;
+    }
+    return autoID;
+  }
+
   const handleForm = async (event) => {
     event.preventDefault();
 
@@ -22,7 +31,8 @@ export default function Home() {
 
     // else successful
     console.log(result);
-    return router.push('/admin');
+    addData('users', { email: email }, autoID());
+    return router.push('/dashboard');
   };
   return (
     <div>
