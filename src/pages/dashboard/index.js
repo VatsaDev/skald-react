@@ -2,9 +2,9 @@
 import React from 'react';
 import { useAuthContext } from '../../context/AuthContext';
 import { useRouter } from 'next/navigation';
-import signOutUser from '../../firebase/auth/signout';
+import Layout from '../../components/layout';
 
-function Page() {
+export default function Home() {
   const { user } = useAuthContext();
   const router = useRouter();
 
@@ -15,8 +15,13 @@ function Page() {
   return (
     <div>
       <h1 className="text-8xl m-8 text-center font-bold">Your Stories</h1>
+      <div id="storybar">
+        <a href=""></a>
+      </div>
     </div>
   );
 }
 
-export default Page;
+Home.getLayout = function getLayout(page) {
+  return <Layout>{page}</Layout>;
+};

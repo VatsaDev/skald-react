@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { useState, useEffect } from 'react';
+import Layout from '../components/layout';
 
 export default function Home() {
   var pathArray = [
@@ -145,11 +146,10 @@ export default function Home() {
           </h2>
         </div>
       </div>
-      <div className="my-8 mx-2 invisible lg:visible">
-        <p className="font-mono">
-          Copyright Vatsa 2023-present, all rights reserved
-        </p>
-      </div>
     </div>
   );
 }
+
+Home.getLayout = function getLayout(page) {
+  return <Layout>{page}</Layout>;
+};

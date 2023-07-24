@@ -3,8 +3,9 @@ import React from 'react';
 import signUp from '../firebase/auth/signup';
 import { useRouter } from 'next/navigation';
 import Head from 'next/head';
+import Layout from '../components/layout';
 
-function Page() {
+export default function Home() {
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
   const router = useRouter();
@@ -77,4 +78,6 @@ function Page() {
   );
 }
 
-export default Page;
+Home.getLayout = function getLayout(page) {
+  return <Layout>{page}</Layout>;
+};

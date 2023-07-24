@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Layout from '../components/layout';
 
 export default function Home() {
   return (
@@ -224,7 +225,7 @@ export default function Home() {
         </div>
         <p class="text-center text-4xl font-bold m-8">
           What are you waiting for?{' '}
-          <a href="/create">
+          <a href="/dashboard">
             <span class="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">
               Get Generating
             </span>
@@ -239,3 +240,7 @@ export default function Home() {
     </div>
   );
 }
+
+Home.getLayout = function getLayout(page) {
+  return <Layout>{page}</Layout>;
+};

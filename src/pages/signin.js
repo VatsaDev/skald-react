@@ -3,6 +3,7 @@ import React from 'react';
 import signIn from '../firebase/auth/signin';
 import { useRouter } from 'next/navigation';
 import Head from 'next/head';
+import Layout from '../components/layout';
 
 export default function Home() {
   const [email, setEmail] = React.useState('');
@@ -130,3 +131,7 @@ export default function Home() {
     </div>
   );
 }
+
+Home.getLayout = function getLayout(page) {
+  return <Layout>{page}</Layout>;
+};

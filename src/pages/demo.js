@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { useState } from 'react';
+import Layout from '../components/layout';
 
 /*async function query(data) {
         const response = await fetch(
@@ -42,7 +43,7 @@ export default function Home() {
     const gtext = await response.json();
     //console.log(gtext.candidates[0].output);
     document.getElementById('editor').value = gtext.candidates[0].output;
-    document.getElementById('naraBtn').disabled = false;
+    //document.getElementById('naraBtn').disabled = false; its a demo
   }
 
   var btnText = 'narrate';
@@ -88,3 +89,7 @@ export default function Home() {
     </div>
   );
 }
+
+Home.getLayout = function getLayout(page) {
+  return <Layout>{page}</Layout>;
+};
