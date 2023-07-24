@@ -4,6 +4,7 @@ import signUp from '../firebase/auth/signup';
 import { useRouter } from 'next/navigation';
 import Head from 'next/head';
 import Layout from '../components/layout';
+import addData from '../firebase/firestore/addData.js';
 
 export default function Home() {
   const [email, setEmail] = React.useState('');
