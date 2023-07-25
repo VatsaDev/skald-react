@@ -31,7 +31,7 @@ export default function Home() {
 
     // else successful
     console.log(result);
-    addData('users', { email: email }, autoID());
+    addData('users', { email: email, tokens: 100 }, autoID());
     return router.push('/dashboard');
   };
   return (

@@ -3,6 +3,11 @@ import React from 'react';
 import { useAuthContext } from '../../context/AuthContext';
 import { useRouter } from 'next/navigation';
 import Layout from '../../components/layout';
+import { getFirestore } from 'firebase/firestore';
+import firebase_app from '../../firebase/config';
+import { collection, query, where } from 'firebase/firestore';
+
+const db = getFirestore(firebase_app);
 
 export default function Home() {
   const { user } = useAuthContext();
@@ -12,6 +17,9 @@ export default function Home() {
     if (user == null) router.push('/');
   }, [user]);
 
+  var stories = user.email;
+  const storiesRef = collection(db, 'stories');
+  console.log(query(storiesRef, where('author', '==', 'test')));
   return (
     <div>
       <h1 className="text-2xl m-8 text-center font-light">Make a new story</h1>
@@ -21,7 +29,7 @@ export default function Home() {
       >
         +
       </a>
-      <div id="storyBar" className="">
+      <div id="storyBar" className="m-8 p-8">
         {stories}
       </div>
     </div>
