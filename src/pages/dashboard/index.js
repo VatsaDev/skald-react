@@ -19,7 +19,12 @@ export default function Home() {
 
   var stories = user.email;
   const storiesRef = collection(db, 'stories');
-  console.log(query(storiesRef, where('author', '==', 'test')));
+
+  async function getStory(author) {
+    var story = await getDocs(query(storiesRef, where('author', '==', author)));
+    return story;
+  }
+  console.log(getStory('test'));
   return (
     <div>
       <h1 className="text-2xl m-8 text-center font-light">Make a new story</h1>
@@ -30,7 +35,7 @@ export default function Home() {
         +
       </a>
       <div id="storyBar" className="m-8 p-8">
-        {stories}
+        {}
       </div>
     </div>
   );
