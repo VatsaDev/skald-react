@@ -21,7 +21,11 @@ export default function Home() {
   const storiesRef = collection(db, 'stories');
 
   async function getStory(author) {
-    var story = await getDocs(query(storiesRef, where('author', '==', author)));
+    var q = query(storiesRef, where('author', '==', author));
+    var story = await getDocs(q);
+    story.forEach((doc) => {
+      console.log(doc.id, ' => ', doc.data());
+    });
     return story;
   }
   console.log(getStory('test'));
