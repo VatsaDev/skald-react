@@ -3,7 +3,7 @@ import React from 'react';
 import { useAuthContext } from '../../context/AuthContext';
 import { useRouter } from 'next/navigation';
 import Layout from '../../components/layout';
-import { getFirestore } from 'firebase/firestore';
+import { getFirestore, doc, getDocs } from 'firebase/firestore';
 import firebase_app from '../../firebase/config';
 import { collection, query, where } from 'firebase/firestore';
 
