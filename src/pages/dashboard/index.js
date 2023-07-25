@@ -20,15 +20,30 @@ export default function Home() {
   var stories = user.email;
   const storiesRef = collection(db, 'stories');
 
+  var storyArray = [];
+
   async function getStory(author) {
     var q = query(storiesRef, where('author', '==', author));
     var story = await getDocs(q);
     story.forEach((doc) => {
-      console.log(doc.id, ' => ', doc.data().author);
+      console.log(
+        `${(
+          <a href={`doc/${doc.id}`}>
+            <h1 className="text-xl">{doc.data().title}</h1>
+          </a>
+        )}`
+      );
+      storyArray.push(
+        `${(
+          <a href={`doc/${doc.id}`}>
+            <h1 className="text-xl">{doc.data().title}</h1>
+          </a>
+        )}`
+      );
     });
     return story;
   }
-  console.log(getStory('test'));
+  getStory('test');
   return (
     <div>
       <h1 className="text-2xl m-8 text-center font-light">Make a new story</h1>
@@ -39,7 +54,7 @@ export default function Home() {
         +
       </a>
       <div id="storyBar" className="m-8 p-8">
-        {}
+        {storyArray}
       </div>
     </div>
   );
