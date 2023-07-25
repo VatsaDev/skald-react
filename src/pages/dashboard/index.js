@@ -26,22 +26,13 @@ export default function Home() {
     var q = query(storiesRef, where('author', '==', author));
     var story = await getDocs(q);
     story.forEach((doc) => {
-      console.log(
-        `${(
-          <a href={`doc/${doc.id}`}>
-            <h1 className="text-xl">{doc.data().title}</h1>
-          </a>
-        )}`
-      );
       storyArray.push(
-        `${(
-          <a href={`doc/${doc.id}`}>
-            <h1 className="text-xl">{doc.data().title}</h1>
-          </a>
-        )}`
+        <a href={`doc/${doc.id}`}>
+          <h1 className="text-xl">{doc.data().title}</h1>
+        </a>
       );
+      console.log(storyArray);
     });
-    return story;
   }
   getStory('test');
   return (
