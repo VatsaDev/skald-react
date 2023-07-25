@@ -24,7 +24,7 @@ export default function Home() {
     var q = query(storiesRef, where('author', '==', author));
     var story = await getDocs(q);
     story.forEach((doc) => {
-      console.log(doc.id, ' => ', doc.data());
+      console.log(doc.id, ' => ', doc.data().author);
     });
     return story;
   }
