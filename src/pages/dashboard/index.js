@@ -21,53 +21,43 @@ export default function Home() {
   var author = user.email;
   const storiesRef = collection(db, 'stories');
 
-  var storyArray = [];
-
-  React.useEffect(() => {
-    async () => {
-      async function getStory() {
-        const q = query(storiesRef, where('author', '==', 'test'));
-        const story = await getDocs(q);
-        story.forEach((doc) => {
-          console.log(doc);
-          document.getElementById('storyBar').innerHTML += `<a href={'doc/${
-            doc.id
-          }'}>
-              <h1 className="text-xl">${doc.data().title}</h1>
-            </a>`;
-        });
-      }
-      await getStory();
-      return storyArray;
-    },
-      [author];
-  });
-
-  function storyChange() {
-    console.log(storyArray);
-    alert('worked');
+  async function getStory() {
+    const q = query(storiesRef, where('author', '==', 'test'));
+    const story = await getDocs(q);
+    if (story.docs.length > 0) {
+      story.forEach((doc) => {
+        //console.log(doc.id, ' => ', doc.data());
+        document.getElementById(
+          'storyBar'
+        ).innerHTML += `<div><a href='/dashboard/doc/${doc.id}'>
+                <h1 class="text-xl m-8">${doc.data().title}</h1>
+              </a></div>`;
+      });
+    } else {
+      document.innerHTML = 'you appear to have no stories';
+    }
   }
 
-  const [postBar, setPostBar] = useState();
+  const [postBar, setPostBar] = useState('you have nothing');
+
+  getStory();
 
   return (
     <div>
       <h1 className="text-2xl m-8 text-center font-light">Make a new story</h1>
-      <a
-        href="/dashboard/create"
-        className="border border-8 border-amber-500 p-8 m-8 font-bold text-8xl text-center"
-      >
-        +
+      <a href="/dashboard/create">
+        <img
+          src="https://raw.githubusercontent.com/VatsaDev/skald-react/main/public/dragonFight.jpg"
+          alt="palm"
+          className="w-36 h-48 mx-auto drop-shadow-2xl my-8"
+        />
       </a>
       <div
         id="storyBar"
-        className="m-8 p-8"
+        className="m-8 p-8 grid grid-cols-2 lg:grid-cols-4"
         value={postBar}
         onChange={(e) => setPostBar(e.target.value)}
-      >
-        {storyArray}
-      </div>
-      <button onClick={storyChange}>test</button>
+      ></div>
     </div>
   );
 }
