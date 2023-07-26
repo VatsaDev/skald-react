@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import { useState } from 'react';
 import { useAuthContext } from '../../context/AuthContext';
 import { useRouter } from 'next/navigation';
 import Layout from '../../components/layout';
@@ -20,21 +21,20 @@ export default function Home() {
   var author = user.email;
   const storiesRef = collection(db, 'stories');
 
-  const storyArray = [];
+  var storyArray = [];
 
   React.useEffect(() => {
     async () => {
-      const storyArray = [];
       async function getStory() {
         const q = query(storiesRef, where('author', '==', 'test'));
         const story = await getDocs(q);
         story.forEach((doc) => {
           console.log(doc);
-          storyArray.push([
-            <a href={`doc/${doc.id}`}>
-              <h1 className="text-xl">{doc.data().title}</h1>
-            </a>,
-          ]);
+          document.getElementById('storyBar').innerHTML += `<a href={'doc/${
+            doc.id
+          }'}>
+              <h1 className="text-xl">${doc.data().title}</h1>
+            </a>`;
         });
       }
       await getStory();
@@ -42,6 +42,14 @@ export default function Home() {
     },
       [author];
   });
+
+  function storyChange() {
+    console.log(storyArray);
+    alert('worked');
+  }
+
+  const [postBar, setPostBar] = useState();
+
   return (
     <div>
       <h1 className="text-2xl m-8 text-center font-light">Make a new story</h1>
@@ -51,9 +59,15 @@ export default function Home() {
       >
         +
       </a>
-      <div id="storyBar" className="m-8 p-8">
+      <div
+        id="storyBar"
+        className="m-8 p-8"
+        value={postBar}
+        onChange={(e) => setPostBar(e.target.value)}
+      >
         {storyArray}
       </div>
+      <button onClick={storyChange}>test</button>
     </div>
   );
 }
