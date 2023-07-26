@@ -17,24 +17,31 @@ export default function Home() {
     if (user == null) router.push('/');
   }, [user]);
 
-  var stories = user.email;
+  var author = user.email;
   const storiesRef = collection(db, 'stories');
 
-  var storyArray = [];
+  const storyArray = [];
 
-  async function getStory(author) {
-    var q = query(storiesRef, where('author', '==', author));
-    var story = await getDocs(q);
-    story.forEach((doc) => {
-      storyArray.push(
-        <a href={`doc/${doc.id}`}>
-          <h1 className="text-xl">{doc.data().title}</h1>
-        </a>
-      );
-      console.log(storyArray);
-    });
-  }
-  getStory('test');
+  React.useEffect(() => {
+    async () => {
+      const storyArray = [];
+      async function getStory() {
+        const q = query(storiesRef, where('author', '==', 'test'));
+        const story = await getDocs(q);
+        story.forEach((doc) => {
+          console.log(doc);
+          storyArray.push([
+            <a href={`doc/${doc.id}`}>
+              <h1 className="text-xl">{doc.data().title}</h1>
+            </a>,
+          ]);
+        });
+      }
+      await getStory();
+      return storyArray;
+    },
+      [author];
+  });
   return (
     <div>
       <h1 className="text-2xl m-8 text-center font-light">Make a new story</h1>
