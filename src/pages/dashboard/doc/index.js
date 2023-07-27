@@ -39,6 +39,7 @@ export default function Page() {
       id="titleStory"
       value={title}
       onChange={(e) => setTitle(e.target.value)}
+      className="text-center text-8xl m-2"
     >
       {text}
     </h1>

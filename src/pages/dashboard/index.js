@@ -53,7 +53,7 @@ export default function Home() {
       <h1 className="text-2xl m-8 text-center font-light">Make a new story</h1>
       <a href="/dashboard/create">
         <img
-          src="https://raw.githubusercontent.com/VatsaDev/skald-react/main/public/dragonFight.jpg"
+          src="https://github.com/VatsaDev/skald-react/blob/main/public/newStory.png?raw=true"
           alt="palm"
           className="w-36 h-48 mx-auto drop-shadow-2xl my-8"
         />

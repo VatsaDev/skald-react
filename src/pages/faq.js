@@ -15,9 +15,8 @@ export default function Home() {
         <div class="w-2/3 mx-auto">
           <h1 class="text-4xl font-bold m-8">What are Runes?</h1>
           <p>
-            Runes are the tokens used to generate your stories. Gold runes are
-            used for adjective changes, etc, and the Amber runes are used for
-            Story generation and rewrites. Amethyst runes are used for image
+            Runes are the tokens used to generate your stories. Runes can be
+            used for adjective changes, Story generation and rewrites and image
             generation.
           </p>
         </div>
