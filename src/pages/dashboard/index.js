@@ -14,6 +14,10 @@ export default function Home() {
   const { user } = useAuthContext();
   const router = useRouter();
 
+  if (user == null) {
+    router.push('/');
+  }
+
   React.useEffect(() => {
     if (user == null) router.push('/');
   }, [user]);
