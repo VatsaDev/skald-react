@@ -33,7 +33,9 @@ export default function Home() {
         //console.log(doc.id, ' => ', doc.data());
         document.getElementById(
           'storyBar'
-        ).innerHTML += `<div><a href='/dashboard/doc/${doc.id}'>
+        ).innerHTML += `<div class="w-3/4 border border-amber-500 mx-auto"><a href='/dashboard/doc?id=${
+          doc.id
+        }'>
                 <h1 class="text-xl m-8">${doc.data().title}</h1>
               </a></div>`;
       });
@@ -42,7 +44,7 @@ export default function Home() {
     }
   }
 
-  const [postBar, setPostBar] = useState('you have nothing');
+  const [postBar, setPostBar] = useState('you have no stories');
 
   getStory();
 
@@ -58,7 +60,7 @@ export default function Home() {
       </a>
       <div
         id="storyBar"
-        className="m-8 p-8 grid grid-cols-2 lg:grid-cols-4"
+        className="m-2 p-2 grid grid-cols-1 lg:grid-cols-4"
         value={postBar}
         onChange={(e) => setPostBar(e.target.value)}
       ></div>
