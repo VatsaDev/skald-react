@@ -33,10 +33,10 @@ export default function Home() {
         //console.log(doc.id, ' => ', doc.data());
         document.getElementById(
           'storyBar'
-        ).innerHTML += `<div class="w-3/4 border border-amber-500 mx-auto"><a href='/dashboard/doc?id=${
+        ).innerHTML += `<div class="w-3/4 bg-slate-100 drop-shadow-xl my-2 mx-auto"><a href='/dashboard/doc?id=${
           doc.id
         }'>
-                <h1 class="text-xl m-8">${doc.data().title}</h1>
+                <h1 class="text-xl p-4 align-middle">${doc.data().title}</h1>
               </a></div>`;
       });
     } else {
@@ -53,14 +53,15 @@ export default function Home() {
       <h1 className="text-2xl m-8 text-center font-light">Make a new story</h1>
       <a href="/dashboard/create">
         <img
-          src="https://github.com/VatsaDev/skald-react/blob/main/public/newStory.png?raw=true"
+          src="https://raw.githubusercontent.com/VatsaDev/skald-react/main/public/newStory.png"
           alt="palm"
           className="w-36 h-48 mx-auto drop-shadow-2xl my-8"
         />
       </a>
+      <h1 className="text-2xl m-8 text-left font-light">Your Stories</h1>
       <div
         id="storyBar"
-        className="m-2 p-2 grid grid-cols-1 lg:grid-cols-4"
+        className="m-2 p-2 grid grid-cols-1 lg:grid-cols-2"
         value={postBar}
         onChange={(e) => setPostBar(e.target.value)}
       ></div>
