@@ -10,7 +10,7 @@ export default function Home() {
       </Head>
 
       <section>
-        <h1 class="text-center text-8xl font-bold m-8">Prompt Generator</h1>
+        <h1 class="text-center text-8xl font-bold m-8">Prompt Guide</h1>
         <p class="text-center text-lg m-8">
           Our model is from Palm 2, the same as{' '}
           <a href="https://bard.google.com/">
@@ -35,7 +35,9 @@ export default function Home() {
             <li>Choosing a Descriptive prompt</li>
             <li>Choosing an Author/Writing style</li>
             <li>Choosing a vibe</li>
+            <li>Choosing An age group</li>
             <li>Adding Keywords</li>
+            <li>Moral Themes or story types</li>
           </ul>
         </div>
         <h2 class="text-center text-3xl font-bold m-8">
@@ -117,12 +119,14 @@ export default function Home() {
             to get the obsidian idol of Odin, in the style of Brandon Mull
           </div>
         </p>
-        <h2 class="text-center text-3xl font-bold m-8">Adding Keywords</h2>
+        <h2 class="text-center text-3xl font-bold m-8">
+          Choosing an Age group
+        </h2>
         <p class="text-lg m-8 w-4/5 mx-auto">
-          While this is optional, choosing an author style, can help Palm
-          generate a better story, as it has the template of an author to go by.
-          Here, We'll go with Brandon Mull, a great fantasy author, the writer
-          of the fablehaven series!
+          Choosing an Age group can tailor your story to the audience much
+          better than a regular story. Choosing an Age group changes everything
+          about a story, from its Vocabulary to its writing style, and is vital
+          for a good story
           <br />
           <br />
           <div className="bg-slate-100 rounded-lg text-xl drop-shadow-xl p-8">
@@ -138,11 +142,68 @@ export default function Home() {
             <span className="text-green-500 font-bold">After:</span> Write a
             fantasy adventure story about Leif the viking going to the the
             magical waterfall of Odin, with its rushing rapids, deep blue water,
-            and its deafening roars, to get the obsidian idol of Odin, in the
-            style of Brandon Mull.{' '}
+            and its deafening roars, to get the obsidian idol of Odin,{' '}
+            <span className="text-amber-500 ">for children ages 8-12</span>, in
+            the style of Brandon Mull.
+          </div>
+        </p>
+        <h2 class="text-center text-3xl font-bold m-8">Adding Keywords</h2>
+        <p class="text-lg m-8 w-4/5 mx-auto">
+          Adding Keywords is a small benefit, but it can be good for underlying
+          story themes, etc.
+          <br />
+          <br />
+          <div className="bg-slate-100 rounded-lg text-xl drop-shadow-xl p-8">
+            <span className="text-red-500 font-bold">Before:</span> Write a
+            fantasy adventure story about Leif the viking going to the the
+            magical waterfall of Odin, with its rushing rapids, deep blue water,
+            and its deafening roars, to get the obsidian idol of Odin, for
+            children ages 8-12, in the style of Brandon Mull
+          </div>
+          <br />
+          <br />
+          <div className="bg-slate-100 rounded-lg text-xl drop-shadow-xl p-8">
+            <span className="text-green-500 font-bold">After:</span> Write a
+            fantasy adventure story about Leif the viking going to the the
+            magical waterfall of Odin, with its rushing rapids, deep blue water,
+            and its deafening roars, to get the obsidian idol of Odin, for
+            children ages 8-12, in the style of Brandon Mull{' '}
             <span className="text-amber-500 ">
               magic, dragons, treasure, myths
             </span>
+          </div>
+        </p>
+        <h2 class="text-center text-3xl font-bold m-8">
+          Moral themes and stoy types
+        </h2>
+        <p class="text-lg m-8 w-4/5 mx-auto">
+          Completely optional, But moral themes and story types can be useful in
+          engineering stories for children and stories for discussions in a
+          classroom, etc.
+          <br />
+          <br />
+          <div className="bg-slate-100 rounded-lg text-xl drop-shadow-xl p-8">
+            <span className="text-red-500 font-bold">Before:</span> Write a
+            fantasy adventure story about Leif the viking going to the the
+            magical waterfall of Odin, with its rushing rapids, deep blue water,
+            and its deafening roars, to get the obsidian idol of Odin, for
+            children ages 8-12, in the style of Brandon Mull. magic, dragons,
+            treasure, myths
+          </div>
+          <br />
+          <br />
+          <div className="bg-slate-100 rounded-lg text-xl drop-shadow-xl p-8">
+            <span className="text-green-500 font-bold">After:</span> Write a
+            fantasy adventure <span className="text-amber-500 ">bedtime</span>{' '}
+            story{' '}
+            <span className="text-amber-500 ">
+              with an underlying moral theme about great power meaning great
+              responsibility
+            </span>{' '}
+            about Leif the viking going to the the magical waterfall of Odin,
+            with its rushing rapids, deep blue water, and its deafening roars,
+            to get the obsidian idol of Odin, for children ages 8-12, in the
+            style of Brandon Mull. magic, dragons, treasure, myths
           </div>
         </p>
         <div className="grid grid-cols-1 lg:grid-cols-2 w-4/5 mx-auto">
@@ -183,44 +244,45 @@ export default function Home() {
             <b>With the proper prompt:</b> <br />
             <br />
             <br />
-            Leif the Viking was a young man who had always dreamed of adventure.
-            He had heard the stories of the magical waterfall of Odin, and he
-            knew that he had to see it for himself. The waterfall was said to be
-            located in a faraway land, and it was said to be guarded by a fierce
-            dragon. But Leif was determined to find it, and he was determined to
-            claim the obsidian idol of Odin that was said to be hidden there.
-            Leif set out on his journey, and he traveled for many days. He faced
-            many dangers along the way, but he never gave up. <br />
+            Once upon a time, there was a young Viking named Leif who lived in a
+            small village on the coast of Norway. Leif was a brave and
+            adventurous boy, and he loved to hear the stories of the old Vikings
+            who had sailed the seas and explored new lands.
             <br />
-            inally, he reached the magical waterfall of Odin. The waterfall was
-            even more beautiful than he had imagined. The water was crystal
-            clear, and it fell in a thunderous roar. Leif knew that he had to
-            find a way to get to the bottom of the waterfall, but he didn't know
-            how. Just then, he saw a young woman standing on the edge of the
-            waterfall. She was beautiful, and she had long, flowing hair. "I am
-            Freya," she said. "I am the guardian of the waterfall of Odin. I can
-            help you get to the bottom, but you must promise to give me the
-            obsidian idol of Odin." <br />
-            <br /> Leif agreed, and Freya led him to a secret path that led to
-            the bottom of the waterfall. At the bottom of the waterfall, Leif
-            found a cave. Inside the cave, he found the obsidian idol of Odin.
-            He took the idol and gave it to Freya. "Thank you," Freya said.
-            "Now, you must go. The dragon will be coming soon." <br />
             <br />
-            Leif turned and ran out of the cave. He heard the dragon's roar
-            behind him, but he didn't stop. He ran as fast as he could, and he
-            finally made it to the edge of the waterfall. Leif jumped into the
-            water and swam away. The dragon flew after him, but Leif was too
-            fast. He swam to the shore and escaped. Leif returned to his
-            village, and he told the people about his adventure. <br />
-            <br /> They were amazed by his story, and they were grateful that he
-            had brought back the obsidian idol of Odin. Leif was a hero, and he
-            was celebrated by everyone in the village. He had found the magical
-            waterfall of Odin, and he had claimed the obsidian idol of Odin. He
-            had also defeated the dragon, and he had saved the village. <br />
+            One day, Leif heard a story about a magical waterfall that was said
+            to be located far to the north. The waterfall was said to be home to
+            the obsidian idol of Odin, a powerful artifact that was said to
+            grant the wishes of its owner. Leif was determined to find the
+            waterfall and claim the idol for himself.
             <br />
-            Leif lived a long and happy life, and he never forgot his adventure
-            at the magical waterfall of Odin.
+            <br />
+            He set sail on his boat and traveled for many days, until he finally
+            reached the edge of the world. There, he found a towering waterfall
+            that plunged into a deep blue pool. The water was so clear that Leif
+            could see the obsidian idol sitting on the bottom of the pool. Leif
+            knew that he had to get the idol, but he also knew that it would be
+            dangerous.
+            <br />
+            <br />
+            The waterfall was surrounded by dragons, and they were known to be
+            fierce protectors of the idol. Leif decided to wait until nightfall,
+            when the dragons would be sleeping. When it was dark, Leif snuck
+            down to the edge of the pool and dove into the water. He swam down
+            to the bottom and grabbed the idol.
+            <br />
+            <br />
+            Just as he was about to swim back to the surface, one of the dragons
+            woke up and saw him. The dragon roared and breathed fire, but Leif
+            was able to dodge the flames. He swam as fast as he could to the
+            surface, and the dragon was too slow to catch him.
+            <br />
+            <br />
+            Leif escaped with the idol, and he returned to his village a hero.
+            He used the idol to grant wishes for the people of the village, and
+            they were all grateful for his help. Leif learned that with great
+            power comes great responsibility. He used the idol to help others,
+            and he made sure that it never fell into the wrong hands.
           </p>
         </div>
         <p class="text-center text-4xl font-bold m-8">
