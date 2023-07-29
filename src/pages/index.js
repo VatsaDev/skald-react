@@ -105,7 +105,7 @@ export default function Home() {
           </p>
         </div>
         <img
-          src="https://raw.githubusercontent.com/VatsaDev/skald-react/main/public/dragonFight.jpg"
+          src="https://raw.githubusercontent.com/VatsaDev/skald-react/main/public/pageBanner2.jpeg"
           alt="palm"
           className="w-3/4 mx-auto drop-shadow-2xl my-8"
         />
@@ -134,7 +134,7 @@ export default function Home() {
           className="w-3/4 mx-auto drop-shadow-2xl my-8"
         />
         <img
-          src="https://raw.githubusercontent.com/VatsaDev/skald-react/main/public/dragonFight.jpg"
+          src="https://raw.githubusercontent.com/VatsaDev/skald-react/main/public/pageBanner.png"
           alt="palm"
           className="w-3/4 mx-auto drop-shadow-2xl my-8"
         />

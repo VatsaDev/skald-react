@@ -36,11 +36,36 @@ export default function Page() {
     }
     readData();
   }
+  async function wordCall(data) {
+    const url =
+      'https://generativelanguage.googleapis.com/v1beta2/models/text-bison-001:generateText?key=AIzaSyDucoz8cp-KDI5_LWXBzbepSc6MN1Ly-Iw';
+
+    var textBody =
+      '{ "prompt": { "text": "return 10 synonyms for the word, give me only the words,:' +
+      data +
+      '"} }';
+
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: textBody,
+    });
+
+    const gtext = await response.json();
+    console.log(gtext.candidates[0].output);
+    return gtext.candidates[0].output;
+  }
+
+  function wordSuggest(value) {
+    document.getElementById('wordOutput').innerHTML = wordCall(value);
+  }
 
   return (
     <div>
       <div className="flex">
-        <div className="flex-auto w-3/4 m-8">
+        <div className="flex-auto w-2/3 m-8">
           <h1
             id="titleStory"
             value={title}
@@ -61,13 +86,44 @@ export default function Page() {
             Generate
           </button>
         </div>
-        <div className="flex-auto w-1/4 p-8 m-8 rounded-lg drop-shadow-sm">
+        <div className="flex-auto w-1/3 p-8 m-8 rounded-lg drop-shadow-sm">
           <h1 className="text-center text-3xl m-2 font-light">
             AI Power Tools
           </h1>
           <div className="bg-slate-100 block w-full h-[80rem] my-8 mx-auto drop-shadow-sm rounded-lg p-8">
-            <h1 className="text-xl">Sensory Expansion</h1>
-            <h1 className="text-xl">Rewrites</h1>
+            <details>
+              <summary className="text-xl">Sensory Expansion</summary>
+              <p>
+                Epcot is a theme park at Walt Disney World Resort featuring
+                exciting attractions, international pavilions, award-winning
+                fireworks and seasonal special events.
+              </p>
+            </details>
+            <details>
+              <summary className="text-xl">Rewrites</summary>
+              <p>
+                Epcot is a theme park at Walt Disney World Resort featuring
+                exciting attractions, international pavilions, award-winning
+                fireworks and seasonal special events.
+              </p>
+            </details>
+            <details>
+              <summary className="text-xl">Word Suggestions</summary>
+              <input
+                id="wordSuggest"
+                type="text"
+                placeholder="give a word"
+                className="p-2 m-2 rounded-lg"
+              />
+              <button
+                onClick={() =>
+                  wordSuggest(document.getElementById('wordSuggest').value)
+                }
+              >
+                Get suggestions
+              </button>
+              <div id="wordOutput"></div>
+            </details>
           </div>
         </div>
       </div>
