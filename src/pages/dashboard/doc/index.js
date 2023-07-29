@@ -41,7 +41,7 @@ export default function Page() {
       'https://generativelanguage.googleapis.com/v1beta2/models/text-bison-001:generateText?key=AIzaSyDucoz8cp-KDI5_LWXBzbepSc6MN1Ly-Iw';
 
     var textBody =
-      '{ "prompt": { "text": "return 10 synonyms for the word, give me only the words,:' +
+      '{ "prompt": { "text": "return 10 synonyms for the word, give me an html list of the words:' +
       data +
       '"} }';
 
@@ -55,11 +55,12 @@ export default function Page() {
 
     const gtext = await response.json();
     console.log(gtext.candidates[0].output);
-    return gtext.candidates[0].output;
+    document.getElementById('wordOutput').innerHTML =
+      gtext.candidates[0].output;
   }
 
   function wordSuggest(value) {
-    document.getElementById('wordOutput').innerHTML = wordCall(value);
+    wordCall(value);
   }
 
   return (
@@ -113,16 +114,20 @@ export default function Page() {
                 id="wordSuggest"
                 type="text"
                 placeholder="give a word"
-                className="p-2 m-2 rounded-lg"
+                className="p-2 m-2 rounded-lg bg-slate-200"
               />
               <button
                 onClick={() =>
                   wordSuggest(document.getElementById('wordSuggest').value)
                 }
+                className="p-2 m-2 rounded-lg bg-amber-500"
               >
                 Get suggestions
               </button>
-              <div id="wordOutput"></div>
+              <div
+                id="wordOutput"
+                className="p-2 m-2 rounded-lg bg-slate-200"
+              ></div>
             </details>
           </div>
         </div>
