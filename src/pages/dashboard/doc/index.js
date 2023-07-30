@@ -63,6 +63,33 @@ export default function Page() {
     wordCall(value);
   }
 
+  async function rewriteCall(data) {
+    const url =
+      'https://generativelanguage.googleapis.com/v1beta2/models/text-bison-001:generateText?key=AIzaSyDucoz8cp-KDI5_LWXBzbepSc6MN1Ly-Iw';
+
+    var textBody =
+      '{ "prompt": { "text": "rewrite the paragraph, removing any grammatical errors:' +
+      data +
+      '"} }';
+
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: textBody,
+    });
+
+    const gtext = await response.json();
+    console.log(gtext.candidates[0].output);
+    document.getElementById('rewriteOutput').innerHTML =
+      gtext.candidates[0].output;
+  }
+
+  function rewriteSuggest(value) {
+    rewriteCall(value);
+  }
+
   return (
     <div>
       <div className="flex">
@@ -102,11 +129,24 @@ export default function Page() {
             </details>
             <details>
               <summary className="text-xl">Rewrites</summary>
-              <p>
-                Epcot is a theme park at Walt Disney World Resort featuring
-                exciting attractions, international pavilions, award-winning
-                fireworks and seasonal special events.
-              </p>
+              <textarea
+                id="rewritesInput"
+                className="w-full h-24 m-2 p-2 rounded-lg"
+              ></textarea>
+              <button
+                onClick={() =>
+                  wordSuggest(document.getElementById('rewritesInput').value)
+                }
+                className="p-2 m-2 rounded-lg border border-amber-500  hover:border-transparent  hover:bg-amber-500"
+              >
+                Get rewrites
+              </button>
+              <div
+                id="rewriteOutput"
+                className="p-2 m-2 rounded-lg bg-slate-200 text-slate-400"
+              >
+                rewrites come here...
+              </div>
             </details>
             <details>
               <summary className="text-xl">Word Suggestions</summary>
@@ -120,14 +160,16 @@ export default function Page() {
                 onClick={() =>
                   wordSuggest(document.getElementById('wordSuggest').value)
                 }
-                className="p-2 m-2 rounded-lg bg-amber-500"
+                className="p-2 m-2 rounded-lg border border-amber-500 hover:border-transparent  hover:bg-amber-500"
               >
                 Get suggestions
               </button>
               <div
                 id="wordOutput"
-                className="p-2 m-2 rounded-lg bg-slate-200"
-              ></div>
+                className="p-2 m-2 rounded-lg bg-slate-200 text-slate-400"
+              >
+                suggests come here...
+              </div>
             </details>
           </div>
         </div>

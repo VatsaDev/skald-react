@@ -92,7 +92,7 @@ export default function Home() {
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2">
+      <div className="grid grid-cols-1">
         <div className="p-8 m-8">
           <h2 className="text-center text-xl m-8">
             Make your own stories, as{' '}
@@ -104,16 +104,6 @@ export default function Home() {
             Use the power of google's most advanced AI model, Palm 2
           </p>
         </div>
-        <img
-          src="https://raw.githubusercontent.com/VatsaDev/skald-react/main/public/pageBanner2.jpeg"
-          alt="palm"
-          className="w-3/4 mx-auto drop-shadow-2xl my-8"
-        />
-        <img
-          src="https://raw.githubusercontent.com/VatsaDev/skald-react/main/public/dragonFight.jpg"
-          alt="palm"
-          className="w-3/4 mx-auto drop-shadow-2xl my-8"
-        />
         <div className="p-8 m-8">
           <h2 className="text-center text-xl my-4">
             Make your stories, as{' '}
@@ -128,16 +118,6 @@ export default function Home() {
             <span className="text-amber-500 font-bold">Full Rewrite</span>
           </h2>
         </div>
-        <img
-          src="https://raw.githubusercontent.com/VatsaDev/skald-react/main/public/dragonFight.jpg"
-          alt="palm"
-          className="w-3/4 mx-auto drop-shadow-2xl my-8"
-        />
-        <img
-          src="https://raw.githubusercontent.com/VatsaDev/skald-react/main/public/pageBanner.png"
-          alt="palm"
-          className="w-3/4 mx-auto drop-shadow-2xl my-8"
-        />
         <div className="p-8 m-8">
           <h2 className="text-center text-xl my-4">
             Tailor your stories, by{' '}
