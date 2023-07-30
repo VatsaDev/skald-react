@@ -3,6 +3,7 @@ import { doc, getDoc, getFirestore } from 'firebase/firestore';
 import firebase_app from '../../../firebase/config';
 import { useRef, useEffect, useInterval } from 'react';
 import { useState } from 'react';
+import Head from 'next/head';
 
 export default function Page() {
   const db = getFirestore(firebase_app);
@@ -36,6 +37,38 @@ export default function Page() {
     }
     readData();
   }
+
+  async function gquery(data) {
+    const url =
+      'https://generativelanguage.googleapis.com/v1beta2/models/text-bison-001:generateText?key=AIzaSyDucoz8cp-KDI5_LWXBzbepSc6MN1Ly-Iw';
+
+    var textBody =
+      '{ "prompt": { "text": "As a prolific author:' + data + '"} }';
+
+    document.getElementById('generate').disabled = true;
+
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: textBody,
+    });
+
+    const gtext = await response.json();
+    //console.log(gtext.candidates[0].output);
+    document.getElementById('createEditor').value = gtext.candidates[0].output;
+    document.getElementById('generate').disabled = false;
+  }
+
+  var btnText = 'narrate';
+
+  function narrate() {
+    if (typeof window !== 'undefined') {
+      gquery(postContent);
+    }
+  }
+
   async function wordCall(data) {
     const url =
       'https://generativelanguage.googleapis.com/v1beta2/models/text-bison-001:generateText?key=AIzaSyDucoz8cp-KDI5_LWXBzbepSc6MN1Ly-Iw';
@@ -68,7 +101,7 @@ export default function Page() {
       'https://generativelanguage.googleapis.com/v1beta2/models/text-bison-001:generateText?key=AIzaSyDucoz8cp-KDI5_LWXBzbepSc6MN1Ly-Iw';
 
     var textBody =
-      '{ "prompt": { "text": "rewrite the paragraph, removing any grammatical errors:' +
+      '{ "prompt": { "text": "rewrite the paragraph, removing any grammatical errors, and adding extra vibrancy and more imaginative etails to the paragraph, making it better:' +
       data +
       '"} }';
 
@@ -92,6 +125,17 @@ export default function Page() {
 
   return (
     <div>
+      <Head>
+        <title>Editor</title>
+        <link rel="icon" href="/logo.png" sizes="any" />
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer"
+        />
+      </Head>
       <div className="flex">
         <div className="flex-auto w-2/3 m-8">
           <h1
@@ -110,7 +154,11 @@ export default function Page() {
             value={postContent}
             onChange={(e) => setPostContent(e.target.value)}
           />
-          <button className="bg-gradient-to-r from-yellow-500 to-amber-600 py-2 px-6 float-right rounded-lg font-bold">
+          <button
+            id="generate"
+            className="bg-gradient-to-r from-yellow-500 to-amber-600 py-2 px-6 float-right rounded-lg text-black font-bold disabled:bg-slate-600 disabled:text-slate-100 enabled:bg-amber-500 enabled:text-black"
+            onClick={narrate()}
+          >
             Generate
           </button>
         </div>
@@ -121,11 +169,36 @@ export default function Page() {
           <div className="bg-slate-100 block w-full h-[80rem] my-8 mx-auto drop-shadow-sm rounded-lg p-8">
             <details>
               <summary className="text-xl">Sensory Expansion</summary>
-              <p>
-                Epcot is a theme park at Walt Disney World Resort featuring
-                exciting attractions, international pavilions, award-winning
-                fireworks and seasonal special events.
-              </p>
+              <button
+                id="sight"
+                className="rounded-lg w-3/4 bg-slate-200 text-black p-2 m-2"
+              >
+                Sight
+              </button>
+              <button
+                id="hear"
+                className="rounded-lg w-3/4 bg-slate-200 text-black p-2 m-2"
+              >
+                Hearing
+              </button>
+              <button
+                id="smell"
+                className="rounded-lg w-3/4 bg-slate-200 text-black p-2 m-2"
+              >
+                Smells
+              </button>
+              <button
+                id="touch"
+                className="rounded-lg w-3/4 bg-slate-200 text-black p-2 m-2"
+              >
+                Touch
+              </button>
+              <button
+                id="taste"
+                className="rounded-lg w-3/4 bg-slate-200 text-black p-2 m-2"
+              >
+                Taste
+              </button>
             </details>
             <details>
               <summary className="text-xl">Rewrites</summary>
@@ -135,7 +208,7 @@ export default function Page() {
               ></textarea>
               <button
                 onClick={() =>
-                  wordSuggest(document.getElementById('rewritesInput').value)
+                  rewriteSuggest(document.getElementById('rewritesInput').value)
                 }
                 className="p-2 m-2 rounded-lg border border-amber-500  hover:border-transparent  hover:bg-amber-500"
               >
@@ -143,7 +216,7 @@ export default function Page() {
               </button>
               <div
                 id="rewriteOutput"
-                className="p-2 m-2 rounded-lg bg-slate-200 text-slate-400"
+                className="p-2 m-2 rounded-lg bg-slate-200 text-black"
               >
                 rewrites come here...
               </div>
@@ -166,7 +239,7 @@ export default function Page() {
               </button>
               <div
                 id="wordOutput"
-                className="p-2 m-2 rounded-lg bg-slate-200 text-slate-400"
+                className="p-2 m-2 rounded-lg bg-slate-200 text-black"
               >
                 suggests come here...
               </div>
