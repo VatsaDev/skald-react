@@ -163,9 +163,7 @@ export default function Page() {
           </button>
         </div>
         <div className="flex-auto w-1/3 p-8 m-8 rounded-lg drop-shadow-sm">
-          <h1 className="text-center text-3xl m-2 font-light">
-            AI Power Tools
-          </h1>
+          <h1 className="text-center text-3xl m-2 font-light">Power Tools</h1>
           <div className="bg-slate-100 block w-full h-[80rem] my-8 mx-auto drop-shadow-sm rounded-lg p-8">
             <details>
               <summary className="text-xl">Sensory Expansion</summary>
@@ -243,6 +241,12 @@ export default function Page() {
               >
                 suggests come here...
               </div>
+            </details>
+            <details>
+              <summary className="text-xl">Other</summary>
+              <p className="text-xl font-light">
+                <i class="fa fa-download" aria-hidden="true"></i> Download
+              </p>
             </details>
           </div>
         </div>
