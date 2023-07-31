@@ -123,6 +123,47 @@ export default function Page() {
     rewriteCall(value);
   }
 
+  function makeFile() {
+    let file = document.getElementById('file');
+    let output = `Title:${title}
+    Content:${document.getElementById('createEditor').value}
+`;
+
+    (function () {
+      var textFile = null,
+        makeTextFile = function (text) {
+          var data = new Blob([text], { type: 'text/plain' });
+
+          // If we are replacing a previously generated file we need to manually revoke the object URL to avoid memory leaks.
+          if (textFile !== null) {
+            window.URL.revokeObjectURL(textFile);
+          }
+
+          textFile = window.URL.createObjectURL(data);
+
+          return textFile;
+        };
+
+      file.addEventListener(
+        'click',
+        function () {
+          var link = document.createElement('a');
+          link.setAttribute('download', 'code.html');
+          link.href = makeTextFile(output);
+          document.body.appendChild(link);
+
+          // wait for the link to be added to the document
+          window.requestAnimationFrame(function () {
+            var event = new MouseEvent('click');
+            link.dispatchEvent(event);
+            document.body.removeChild(link);
+          });
+        },
+        false
+      );
+    })();
+  }
+
   return (
     <div>
       <Head>
@@ -244,8 +285,8 @@ export default function Page() {
             </details>
             <details>
               <summary className="text-xl">Other</summary>
-              <p className="text-xl font-light">
-                <i class="fa fa-download" aria-hidden="true"></i> Download
+              <p className="text-xl font-light" id="file">
+                <i className="fa fa-download" aria-hidden="true"></i> Download
               </p>
             </details>
           </div>
